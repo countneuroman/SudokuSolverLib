@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Stepan Utkin</Authors>
+    <Company />
+    <Description>Sudoku array solver</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageTags>Sudoku, SudokuSolver, Solver</PackageTags>
+  </PropertyGroup>
+
+</Project>
