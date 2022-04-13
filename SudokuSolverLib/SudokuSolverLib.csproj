@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Sudoku, SudokuSolver, Solver</PackageTags>
     <RepositoryUrl>https://github.com/Kartoshkin-btw/SudokuSolverLib</RepositoryUrl>
-    <PackageId>SudokuSolverLib</PackageId>
+    <PackageId>SudokuSolverLibrary</PackageId>
   </PropertyGroup>
 
 </Project>
