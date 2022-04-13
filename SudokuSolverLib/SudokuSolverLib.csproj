@@ -5,8 +5,10 @@
     <Authors>Stepan Utkin</Authors>
     <Company />
     <Description>Sudoku array solver</Description>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>Sudoku, SudokuSolver, Solver</PackageTags>
+    <RepositoryUrl>https://github.com/Kartoshkin-btw/SudokuSolverLib</RepositoryUrl>
+    <PackageId>SudokuSolverLib</PackageId>
   </PropertyGroup>
 
 </Project>
