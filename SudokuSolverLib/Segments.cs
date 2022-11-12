@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SudokuSolverLib;
+﻿namespace SudokuSolverLib;
 
 static class Segments
 {
