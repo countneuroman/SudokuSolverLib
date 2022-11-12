@@ -1,6 +1,6 @@
 ﻿namespace SudokuSolverLib;
 
-static class Segments
+internal static class Segments
 {
     static int[,] first = new int[2, 3] { { 0, 1, 2 }, { 0, 1, 2 } };
     static int[,] second = new int[2, 3] { { 0, 1, 2 }, { 3, 4, 5 } };
@@ -11,18 +11,18 @@ static class Segments
     static int[,] seventh = new int[2, 3] { { 6, 7, 8 }, { 0, 1, 2 } };
     static int[,] eighth = new int[2, 3] { { 6, 7, 8 }, { 3, 4, 5 } };
     static int[,] ninth = new int[2, 3] { { 6, 7, 8 }, { 6, 7, 8 } };
-    static List<int[,]> segments = new List<int[,]> { first, second, third, fourth, fifth, sixth, seventh, eighth, ninth };
+    static List<int[,]> segments = new() { first, second, third, fourth, fifth, sixth, seventh, eighth, ninth };
     public static int[,] GetSigment(int row, int column)
     {
-        if (row >= 0 && row < 9 && column >= 0 && column < 9)
+        if (row is >= 0 and < 9 && column is >= 0 and < 9)
         {
             foreach (int[,] positions in segments)
             {
-                for (int i = 0; i < 3; i++)
+                for (var i = 0; i < 3; i++)
                 {
                     if (positions[0, i] == row)
                     {
-                        for (int j = 0; j < 3; j++)
+                        for (var j = 0; j < 3; j++)
                         {
                             if (positions[1, j] == column)
                             {

@@ -18,13 +18,13 @@ public class Solver
         try
         {
             int[,] fakeSudoku = (int[,])sudoku.Clone();
-            for (int row = 0; row < 9; row++)
+            for (var row = 0; row < 9; row++)
             {
-                for (int column = 0; column < 9; column++)
+                for (var column = 0; column < 9; column++)
                 {
                     if (sudoku[row, column] == 0)
                     {
-                        for (int value = 1; value < 10; value++)
+                        for (var value = 1; value < 10; value++)
                         {
                             if (Possibility(sudoku, row, column, value))
                             {
@@ -37,7 +37,7 @@ public class Solver
                             }
                             if (sudoku[row, column] == 0 && value == 9)
                             {
-                                return new int[,] { { -1 } };
+                                return new[,] { { -1 } };
                             }
                         }
                     }
@@ -47,19 +47,20 @@ public class Solver
         }
         catch
         {
-            return new int[,] { { -1 } };
+            return new[,] { { -1 } };
         }
     }
-    bool Possibility(int[,] sudoku, int row, int column, int value)
+
+    private bool Possibility(int[,] sudoku, int row, int column, int value)
     {
         if (HorizontalPossibility(sudoku, row, value) && VerticalPossibility(sudoku, column, value) && SigmentPossibility(sudoku, row, column, value))
             return true;
         return false;
     }
-    bool HorizontalPossibility(int[,] sudoku, int row, int value)
+    private bool HorizontalPossibility(int[,] sudoku, int row, int value)
     {
-        bool result = true;
-        for (int i = 0; i < 9; i++)
+        var result = true;
+        for (var i = 0; i < 9; i++)
         {
             if (sudoku[row, i] == value)
             {
@@ -70,10 +71,10 @@ public class Solver
         }
         return result;
     }
-    bool VerticalPossibility(int[,] sudoku, int column, int value)
+    private bool VerticalPossibility(int[,] sudoku, int column, int value)
     {
-        bool result = true;
-        for (int i = 0; i < 9; i++)
+        var result = true;
+        for (var i = 0; i < 9; i++)
         {
             if (sudoku[i, column] == value)
             {
@@ -84,15 +85,15 @@ public class Solver
         }
         return result;
     }
-    bool SigmentPossibility(int[,] sudoku, int row, int column, int value)
+    private bool SigmentPossibility(int[,] sudoku, int row, int column, int value)
     {
         int[,] sigment = Segments.GetSigment(row, column);
-        bool result = true;
-        for (int i = 0; i < 3; i++)
+        var result = true;
+        for (var i = 0; i < 3; i++)
         {
             if (!result)
                 break;
-            for (int j = 0; j < 3; j++)
+            for (var j = 0; j < 3; j++)
             {
                 if (sudoku[sigment[0, i], sigment[1, j]] == value)
                 {
