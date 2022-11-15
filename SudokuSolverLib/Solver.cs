@@ -59,7 +59,7 @@ public class Solver
     }
     private bool HorizontalPossibility(int[,] sudoku, int row, int value)
     {
-        var result = true;
+        bool result = true;
         for (var i = 0; i < 9; i++)
         {
             if (sudoku[row, i] == value)
@@ -73,7 +73,7 @@ public class Solver
     }
     private bool VerticalPossibility(int[,] sudoku, int column, int value)
     {
-        var result = true;
+        bool result = true;
         for (var i = 0; i < 9; i++)
         {
             if (sudoku[i, column] == value)
@@ -88,7 +88,7 @@ public class Solver
     private bool SigmentPossibility(int[,] sudoku, int row, int column, int value)
     {
         int[,] sigment = Segments.GetSigment(row, column);
-        var result = true;
+        bool result = true;
         for (var i = 0; i < 3; i++)
         {
             if (!result)
